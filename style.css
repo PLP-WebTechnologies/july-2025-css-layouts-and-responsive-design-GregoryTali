@@ -1,0 +1,130 @@
+/* ===============================
+   Base Styles
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ===============================
+   Header & Navigation (Flexbox)
+================================ */
+.header {
+  background: #444;
+  color: #fff;
+  padding: 1rem;
+}
+
+.header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.nav ul {
+  display: flex; /* Flexbox for horizontal nav */
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   Hero Section
+================================ */
+.hero {
+  background: #f4f4f4;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* ===============================
+   Main Layout (CSS Grid)
+================================ */
+.main-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Main content + sidebar */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.content {
+  background: #e8f0fe;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.sidebar {
+  background: #ffe0b2;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* ===============================
+   Flexbox Cards inside Content
+================================ */
+.card-container {
+  display: flex; /* Flexbox */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1;
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* ===============================
+   Footer
+================================ */
+.footer {
+  background: #444;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* ===============================
+   Media Queries (Responsive)
+================================ */
+
+/* Tablets (≤ 768px) */
+@media (max-width: 768px) {
+  .main-layout {
+    grid-template-columns: 1fr; /* Stack content & sidebar */
+  }
+
+  .nav ul {
+    flex-direction: column; /* Vertical nav */
+    gap: 0.5rem;
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .card-container {
+    flex-direction: column; /* Stack cards */
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+}
